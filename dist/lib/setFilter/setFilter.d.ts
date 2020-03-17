@@ -1,5 +1,5 @@
-// ag-grid-enterprise v21.2.2
 import { IDoesFilterPassParams, ISetFilterParams, ProvidedFilter } from "ag-grid-community";
+import { SetValueModel } from "./setValueModel";
 import { SetFilterModel } from "./setFilterModel";
 export declare class SetFilter extends ProvidedFilter {
     private valueModel;
@@ -12,24 +12,25 @@ export declare class SetFilter extends ProvidedFilter {
     private selectAllState;
     private setFilterParams;
     private virtualList;
-    private eCheckedIcon;
-    private eUncheckedIcon;
-    private eIndeterminateCheckedIcon;
     private appliedModelValuesMapped;
     protected updateUiVisibility(): void;
     protected createBodyTemplate(): string;
+    protected getCssIdentifier(): string;
     protected resetUiToDefaults(): void;
     protected setModelIntoUi(model: SetFilterModel): void;
     getModelFromUi(): SetFilterModel | null;
+    getValueModel(): SetValueModel;
     protected areModelsEqual(a: SetFilterModel, b: SetFilterModel): boolean;
     setParams(params: ISetFilterParams): void;
-    private resetFilterValuesAndReapplyModel;
-    private setupSyncValuesLikeExcel;
+    private checkSetFilterDeprecatedParams;
+    private syncValuesAfterDataChange;
+    private setupSyncValuesAfterDataChange;
     private updateCheckboxIcon;
     setLoading(loading: boolean): void;
     private initialiseFilterBodyUi;
     private createSetListItem;
     afterGuiAttached(params: any): void;
+    refreshVirtualList(): void;
     applyModel(): boolean;
     doesFilterPass(params: IDoesFilterPassParams): boolean;
     onNewRowsLoaded(): void;
@@ -56,7 +57,7 @@ export declare class SetFilter extends ProvidedFilter {
     private doSelectAll;
     private onItemSelected;
     setMiniFilter(newMiniFilter: any): void;
-    getMiniFilter(): string | null;
+    getMiniFilter(): string;
     selectEverything(): void;
     selectNothing(): void;
     unselectValue(value: any): void;
@@ -65,5 +66,5 @@ export declare class SetFilter extends ProvidedFilter {
     isEverythingSelected(): boolean;
     isNothingSelected(): boolean;
     getUniqueValueCount(): number;
-    getUniqueValue(index: any): string | null;
+    getUniqueValue(index: any): string;
 }

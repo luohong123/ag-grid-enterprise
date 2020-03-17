@@ -1,4 +1,3 @@
-// ag-grid-enterprise v21.2.2
 export declare class LicenseManager {
     private static RELEASE_INFORMATION;
     private static licenseKey;
@@ -10,9 +9,9 @@ export declare class LicenseManager {
     getLicenseDetails(licenseKey: string): {
         licenseKey: string;
         valid: boolean;
-        expiry: string | null;
+        expiry: string;
         version: string;
-        isTrial: boolean | null;
+        isTrial: boolean;
     };
     isDisplayWatermark(): boolean;
     getWatermarkMessage(): string;

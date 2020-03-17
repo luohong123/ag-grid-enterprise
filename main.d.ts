@@ -1,4 +1,6 @@
-// Type definitions for ag-grid-enterprise v22.1.1
+// Type definitions for ag-grid-enterprise v23.0.1
 // Project: http://www.ag-grid.com/
 // Definitions by: Niall Crosby <https://github.com/ag-grid/>
-export { LicenseManager } from "./dist/ag-grid-enterprise.cjs.js";
+export { VirtualList } from "ag-grid-community";
+export { LicenseManager } from "./dist/lib/main";
+export { SetFilter } from "./dist/lib/main";
